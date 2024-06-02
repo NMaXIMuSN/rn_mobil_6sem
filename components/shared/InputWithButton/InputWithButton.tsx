@@ -4,11 +4,12 @@ import { UiButton } from "../UiButton/UiButton"
 import { useState } from "react"
 
 interface IProps {
+  idLoading?: boolean
   onChangeText?: (value: string) => void
 }
 
 export const InputWithButton = (props: IProps) => {
-  const { onChangeText } = props
+  const { onChangeText, idLoading } = props
   const [v, setV] = useState('')
 
   const onPress = () => {
@@ -18,7 +19,7 @@ export const InputWithButton = (props: IProps) => {
 
   return <View style={[styles.wrapper]}>
     <UiInput styles={styles.input} value={v} setValue={setV}/>
-    <UiButton onPress={onPress}/>
+    <UiButton idLoading={idLoading} onPress={onPress}/>
   </View>
 }
 

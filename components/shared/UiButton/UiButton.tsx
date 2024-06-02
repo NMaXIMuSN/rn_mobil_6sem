@@ -5,12 +5,13 @@ import { Text, StyleSheet, Pressable } from 'react-native';
 interface IProps {
   onPress?: () => void;
   title?: string;
+  idLoading?: boolean
 }
 
 export const UiButton = (props: IProps) => {
-  const { onPress, title = 'Save' } = props;
+  const { onPress, title = 'Save', idLoading } = props;
   return (
-    <Pressable style={styles.button} onPress={onPress}>
+    <Pressable style={styles.button} disabled={idLoading} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
