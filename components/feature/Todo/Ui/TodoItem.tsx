@@ -1,7 +1,6 @@
 import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native"
 import Checkbox from 'expo-checkbox';
 import { ITodoItem } from "@/context/TodoContext";
-import { useLoading } from "@/hooks/useLoading";
 import { useState } from "react";
 
 interface IProps {
