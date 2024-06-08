@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
-  const [ value, setValue ] = useState('')
+  
   return (
     <TodoContextProvider>
       <View style={styles.wrapper}>
@@ -22,8 +22,6 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingLeft: 20,
-    paddingRight: 20,
     gap: 20,
   }
 })

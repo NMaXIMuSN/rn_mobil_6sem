@@ -12,7 +12,7 @@ export const Todo = () => {
   // Создает эффект который отрабатывает при изменении зависимостей. в нашем случае отрабатывает при рендре компонента
   useEffect(() => {
     axiosInstance<ITodoItem[]>({
-      url: '/',
+      url: '/todo',
       method: 'GET',
     }).then(( {data} ) => {
       setTodo(data.reverse());
@@ -23,7 +23,7 @@ export const Todo = () => {
   const setCloseItem = async (item: ITodoItem) => {
     await axiosInstance<ITodoItem>({
       method: "PUT",
-      url: `${item.id}`,
+      url: `todo/${item.id}`,
       data: {
         ...item,
         close: !item.close,
@@ -49,7 +49,7 @@ export const Todo = () => {
     setIdLoading(true)
     await axiosInstance<ITodoItem>({
       method: "POST",
-      url: '/',
+      url: '/todo/',
       data: {
         id: todo[0].id,
         text,
@@ -65,7 +65,7 @@ export const Todo = () => {
 
   // функция для удаления
   const deleteListItem = async (item: ITodoItem) => {
-    await axiosInstance(`${item.id}`, {
+    await axiosInstance(`todo/${item.id}`, {
       method: "DELETE",
     }).then((res) => {
       setTodo((prev) => prev.filter(_item => _item.id !== item.id))

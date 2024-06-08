@@ -1,15 +1,15 @@
 import { heightField } from '@/constants/Style';
 import { useState } from 'react';
-import { StyleProp, StyleSheet, TextInput, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, TextInput, View, ViewStyle, TextInputProps } from 'react-native';
 
-interface IProps {
+export interface IInputProps extends TextInputProps {
   value: string
   setValue: (v: string) => void
   styles?: StyleProp<ViewStyle>
 }
 
-export const UiInput = (props: IProps) =>  {
-  const { value, setValue, styles: _styles } = props
+export const UiInput = (props: IInputProps) =>  {
+  const { value, setValue, styles: _styles, ...otherProps } = props
 
   return (
     <View style={[styles.wrapper, _styles]}>
@@ -17,6 +17,7 @@ export const UiInput = (props: IProps) =>  {
         value={value}
         onChangeText={setValue}
         style={[styles.input]}
+        {...otherProps}
       />
     </View>
   );
