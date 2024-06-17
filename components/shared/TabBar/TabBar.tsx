@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 12,
+    paddingLeft: 20,
+    paddingRight: 20,
     backgroundColor: '#fff',
   },
   tabItem: {

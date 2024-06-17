@@ -9,9 +9,6 @@ export default function UserScreen() {
   return (
     <ImagesProvider>
       <View>
-        <Text>
-          images
-        </Text>
         <View>
           <AddImage />
           <ImagesList />

@@ -11,9 +11,6 @@ export default function HomeScreen() {
   return (
     <TodoContextProvider>
       <View style={styles.wrapper}>
-        <Text>
-          TodoList
-        </Text>
         <Todo />
       </View>
     </TodoContextProvider>

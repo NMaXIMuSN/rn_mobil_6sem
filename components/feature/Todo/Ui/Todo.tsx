@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   scrollWrapper: {
     display: 'flex',
     gap: 10,
-    height: 200,
+    // height: 200,
   },
   item: {
     marginBottom: 10,

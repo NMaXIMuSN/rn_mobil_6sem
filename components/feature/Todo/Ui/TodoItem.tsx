@@ -1,7 +1,8 @@
 import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native"
-import Checkbox from 'expo-checkbox';
+import { Checkbox, Icon, IconButton } from 'native-base';
 import { ITodoItem } from "@/context/TodoContext";
 import { useState } from "react";
+import { FontAwesome } from "@expo/vector-icons";
 
 interface IProps {
   close: boolean;
@@ -32,16 +33,14 @@ export const TodoItem = (props: IProps) => {
 
   return <View style={[styles.wrapper, _styles]}>
 
-    <Checkbox value={close} onValueChange={(e) => handlerClose()} color="#000" disabled={isLoading}/>
+    <Checkbox value={'false'} isChecked={close} onChange={() => handlerClose()} isDisabled={isLoading} />
 
     <Text style={[styles.text, close ? styles.testDashed : {}]}>
       {text}
     </Text>
 
     <Pressable onPress={() => handlerDelete()} disabled={isLoading}>
-      <Text >
-        Удалить
-      </Text>
+      <IconButton icon={<FontAwesome name="trash-o" size={24} color="red" /> } />
     </Pressable>
   </View>
 }
