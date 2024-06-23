@@ -34,7 +34,7 @@ export const TodoItem = (props: IProps) => {
 
   return <View style={[styles.wrapper, _styles]} >
 
-    <Checkbox value={'false'} isChecked={close} onChange={() => handlerClose()} isDisabled={isLoading} />
+    <Checkbox aria-label={`checkbox-${close}-${text}`} value={'false'} isChecked={close} onChange={() => handlerClose()} isDisabled={isLoading} />
 
     <Text style={[styles.text, close ? styles.testDashed : {}]}>
       {text}

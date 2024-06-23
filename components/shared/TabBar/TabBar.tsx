@@ -4,8 +4,7 @@ import { Entypo, Feather } from '@expo/vector-icons'
 
 export const TabBar = () => {
   const path = usePathname()
-  console.log(path);
-  
+
   return (
     <View style={styles.tabBar}>
       <Link href={'/'}>

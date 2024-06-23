@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         maxWidth: 800,
         paddingTop: 0,
         marginHorizontal: 'auto',
+        overflow: 'scroll',
       },
     })
   },

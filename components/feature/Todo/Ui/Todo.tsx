@@ -1,6 +1,6 @@
 import { InputWithButton } from "@/components/shared/InputWithButton/InputWithButton"
 import { useContext, useEffect, useState } from "react"
-import { ScrollView, StyleSheet, View } from "react-native"
+import { Platform, ScrollView, StyleSheet, View } from "react-native"
 import { TodoItem } from "./TodoItem"
 import { TodoContext, ITodoItem  } from "@/context/TodoContext"
 import { axiosInstance } from "@/utils/axios"
@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
   scrollWrapper: {
     display: 'flex',
     gap: 10,
-    // height: 200,
   },
   item: {
     marginBottom: 10,
