@@ -3,6 +3,7 @@ import { Checkbox, Icon, IconButton } from 'native-base';
 import { ITodoItem } from "@/context/TodoContext";
 import { useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import { borderRadius } from "@/components/shared/styles/borderRadius";
 
 interface IProps {
   close: boolean;
@@ -31,7 +32,7 @@ export const TodoItem = (props: IProps) => {
     setIsLoading(false)
   }
 
-  return <View style={[styles.wrapper, _styles]}>
+  return <View style={[styles.wrapper, _styles]} >
 
     <Checkbox value={'false'} isChecked={close} onChange={() => handlerClose()} isDisabled={isLoading} />
 
@@ -50,6 +51,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     gap: 8,
+    padding: 4,
+    borderColor: 'rgba(212,212,212,1.00)',
+    borderWidth: 1,
+    alignItems: 'center',
+    ...borderRadius,
   },
   text: {
     flex: 1,
