@@ -1,4 +1,4 @@
-import { heightField } from '@/constants/Style';
+import { heightField } from '../../../constants/Style';
 import React from 'react';
 import { Text, StyleSheet, Pressable } from 'react-native';
 
